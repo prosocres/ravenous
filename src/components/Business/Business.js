@@ -1,9 +1,15 @@
 import React from 'react';
 import './Business.css';
 
+
+
 class Business extends React.Component {
     render() {
         const { business } = this.props;
+        const urlAddress = business.address+' '+business.city+' '+business.state+' '+business.zipCode;
+        const urlAddressEncoded = encodeURI(urlAddress);
+        const mapQuery = 'https://www.google.com/maps/search/?api=1&query=';
+        const mapLink = mapQuery+urlAddressEncoded;
         return (
             <div className="Business">
                 <div className="image-container">
@@ -16,6 +22,7 @@ class Business extends React.Component {
                     <p>{business.city}</p>
                     <p>{business.state} {business.zipCode}</p>
                     <a href={business.url}> Website </a>
+                    <a href={mapLink}> Map </a>
                 </div>
                 <div className="Business-reviews">
                     <h3>{business.category}</h3>
