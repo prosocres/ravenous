@@ -18,7 +18,7 @@ class Business extends React.Component {
             <h2>{business.name}</h2>
             <div className='Business-information'>
                 <div className='Business-address'>
-                <a href={mapLink}> 
+                    <a href={mapLink}> 
                     {business.address}<br/>
                     {business.city}<br/>
                     {business.state} {business.zipCode}
